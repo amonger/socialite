@@ -7,22 +7,22 @@
      */
 
     require_once "vendor/autoload.php";
-    require_once "classes.php";
-
-//    $transport = new \Socialite\Transport\Transport(new Guzzle\Http\Client());
 
     $twitter = \Socialite\Service\TwitterFacade::get(array(
-        'consumer_key'    => "DixIt6v40FQDpZX2URMjoQ",
-        'consumer_secret' => "tNJxZl8KDIGhxmQ5YSedB8sH0XAbOGYe1iYd40ThKk",
-        'token'           => "14303663-iFnRpd8UA9z5vkbUzWobAjq31IxNYDU2ZTCAiVz7r",
-        'token_secret'    => "btyPl9aq9TZQghDSNkVOZdLV9KT9PkFVQRYSU8i9hIzoT"
+        'consumer_key'    => "aKDqJ8angACRBZ4JfOT9g",
+        'consumer_secret' => "NLnDNQetHxG3e7a0iRAn4mhIiIvrzqpIY5YhoKKbTY",
+        'token'           => "14303663-FnbM1451j02OUFkHUZcJt4xavvO6Sr7l2rPJaDLBl",
+        'token_secret'    => "8oK2rXC3I1A5pjlTId2jhl8n88Aa9rO2rO5A9Flp2NKhl"
     ));
-//    $twitter
-//        ->setApiKey("DixIt6v40FQDpZX2URMjoQ")
-//        ->setApiSecret("tNJxZl8KDIGhxmQ5YSedB8sH0XAbOGYe1iYd40ThKk")
-//        ->setAccessToken("14303663-iFnRpd8UA9z5vkbUzWobAjq31IxNYDU2ZTCAiVz7r")
-//        ->setAccessTokenSecret("btyPl9aq9TZQghDSNkVOZdLV9KT9PkFVQRYSU8i9hIzoT");
 
-    $response = $twitter->getUserTimeline();//$twitter->tweet("test");
-//    $response = $twitter->search("bbc");
-    var_dump($response);
+    try{
+        $response = $twitter->search("test");
+
+        var_dump($response);
+    }
+    catch(\Exception $e)
+    {
+        var_dump($e);
+
+    }
+
