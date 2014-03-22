@@ -1,12 +1,19 @@
 {
-    "name": "root/public_html",
+    "name": "alanmonger/socialite",
+    "license": "MIT",
+    "description": "Simple social media wrapper",
     "authors": [
         {
             "name": "Alan Monger",
             "email": "haveacigaro@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-0": { "": "Socialite/" }
+    },
     "require": {
-        "guzzle/guzzle": "3.8.*@dev"
+        "guzzle/guzzle": "3.9.*",
+        "facebook/php-sdk-v4": "4.0.*",
+        "tumblr/tumblr": "0.1.*"
     }
 }
