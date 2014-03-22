@@ -1,0 +1,12 @@
+{
+    "name": "root/public_html",
+    "authors": [
+        {
+            "name": "Alan Monger",
+            "email": "haveacigaro@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzle/guzzle": "3.8.*@dev"
+    }
+}
