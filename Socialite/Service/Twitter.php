@@ -17,17 +17,17 @@
             $this->client = $client;
             $this->client
                 ->setBaseUrl('https://api.twitter.com/{version}')
-                ->setConfig(array('version' => '1.1'));
-            $this->client->addSubscriber($oauth);
+                ->setConfig(array(
+                    'version' => '1.1'
+                ))
+                ->addSubscriber($oauth);
             $this->responseType = $responseType;
         }
 
         public function tweet($status)
         {
             $request = $this->client->post('statuses/update.json', array(), array(
-                "body" => array(
                     "status" => $status
-                )
             ));
 
             return $request->send();
