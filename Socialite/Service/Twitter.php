@@ -66,6 +66,16 @@
 
         }
 
+        public function getLatestTweets($screenName, $count)
+        {
+            $request = $this->client->get('statuses/user_timeline.json');
+            $request->getQuery()
+                ->set('count', $count)
+                ->set('screen_name', $screenName);
+
+            return call_user_func(array($request->send(), $this->responseType));
+        }
+
         public function getUserTimeline()
         {
             $request = $this->client->get('statuses/user_timeline.json');
