@@ -4,6 +4,7 @@
 
     use Guzzle\http\client as GuzzleClient;
     use Guzzle\Plugin\Oauth\OauthPlugin;
+    use \Socialite\Post;
 
     class Twitter implements ServiceInterface
     {
@@ -13,28 +14,27 @@
 
         function __construct (GuzzleClient $client, OauthPlugin $oauth, $responseType = "json")
         {
-            $this->oauth  = $oauth;
-            $this->client = $client;
-            $this->client
+            $this->oauth        = $oauth;
+            $this->client       = $client
                 ->setBaseUrl('https://api.twitter.com/{version}')
+                ->addSubscriber($oauth)
                 ->setConfig(array(
                     'version' => '1.1'
-                ))
-                ->addSubscriber($oauth);
+                ));
             $this->responseType = $responseType;
         }
 
-        public function tweet($status)
+        public function tweet (Post $post)
         {
             $request = $this->client->post('statuses/update.json', array(), array(
-                    "status" => $status
+                "status" => $post->getBody()
             ));
 
             return $request->send();
 
         }
 
-        public function getLatestTweets($screenName, $count)
+        public function getLatestTweets ($screenName, $count)
         {
             $request = $this->client->get('statuses/user_timeline.json');
             $request->getQuery()
@@ -44,7 +44,7 @@
             return call_user_func(array($request->send(), $this->responseType));
         }
 
-        public function getFavourites($screenName)
+        public function getFavourites ($screenName)
         {
             $request = $this->client->get('favorites/list.json');
             $request->getQuery()
@@ -53,14 +53,14 @@
             return call_user_func(array($request->send(), $this->responseType));
         }
 
-        public function getUserTimeline()
+        public function getUserTimeline ()
         {
             $request = $this->client->get('statuses/user_timeline.json');
 
             return call_user_func(array($request->send(), $this->responseType));
         }
 
-        public function search($query)
+        public function search ($query)
         {
             $request = $this->client->get('search/tweets.json');
             $request->getQuery()->set('q', $query);
