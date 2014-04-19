@@ -22,38 +22,6 @@
             $this->responseType = $responseType;
         }
 
-        /**
-         * @param mixed $client
-         */
-        public function setClient ($client)
-        {
-            $this->client = $client;
-        }
-
-        /**
-         * @return mixed
-         */
-        public function getClient ()
-        {
-            return $this->client;
-        }
-
-        /**
-         * @param mixed $oauth
-         */
-        public function setOauth ($oauth)
-        {
-            $this->oauth = $oauth;
-        }
-
-        /**
-         * @return mixed
-         */
-        public function getOauth ()
-        {
-            return $this->oauth;
-        }
-
         public function tweet($status)
         {
             $request = $this->client->post('statuses/update.json', array(), array(
@@ -76,6 +44,15 @@
             return call_user_func(array($request->send(), $this->responseType));
         }
 
+        public function getFavourites($screenName)
+        {
+            $request = $this->client->get('favorites/list.json');
+            $request->getQuery()
+                ->set('screen_name', $screenName);
+
+            return call_user_func(array($request->send(), $this->responseType));
+        }
+
         public function getUserTimeline()
         {
             $request = $this->client->get('statuses/user_timeline.json');
@@ -83,7 +60,7 @@
             return call_user_func(array($request->send(), $this->responseType));
         }
 
-        public function search ($query = "")
+        public function search($query)
         {
             $request = $this->client->get('search/tweets.json');
             $request->getQuery()->set('q', $query);
