@@ -1,5 +1,5 @@
 <?php
-    namespace Socialite\Service;
+    namespace Socialite\Service\Facebook;
 
     use Socialite\Message;
 
@@ -9,7 +9,7 @@
      * Date: 3/22/14
      * Time: 2:02 PM
      */
-    class Facebook implements ServiceInterface
+    class Facebook implements \Socialite\Service\ServiceInterface
     {
 
         private $facebook;

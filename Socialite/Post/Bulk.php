@@ -34,7 +34,7 @@
                 try {
                     $post->post($message);
                 } catch (\Exception $e) {
-                    
+
                 }
             }
         }

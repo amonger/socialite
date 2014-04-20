@@ -6,15 +6,15 @@
      * Time: 8:15 PM
      */
 
-    namespace Socialite\Service;
+    namespace Socialite\Service\Twitter;
 
 
     use Socialite\Message;
 
-    class TwitterAdapter implements ServiceInterface
+    class TwitterAdapter implements \Socialite\Service\ServiceInterface
     {
 
-        /** @var \Socialite\Service\Twitter $twitter */
+        /** @var \Socialite\Service\Twitter\Twitter $twitter */
         private $twitter;
 
         public function __construct (Twitter $twitter)

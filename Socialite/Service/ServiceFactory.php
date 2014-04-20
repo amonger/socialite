@@ -9,11 +9,11 @@
     {
         public static function twitter ($oauth = array())
         {
-            return new TwitterAdapter(new Twitter(new Client(), new OauthPlugin($oauth)));
+            return new Twitter\TwitterAdapter(new Twitter\Twitter(new Client(), new OauthPlugin($oauth)));
         }
 
         public static function facebook ($config = array())
         {
-            return new Facebook(new \Facebook($config));
+            return new Facebook\Facebook(new \Facebook($config));
         }
     }
