@@ -4,7 +4,7 @@
 
     use Guzzle\http\client as GuzzleClient;
     use Guzzle\Plugin\Oauth\OauthPlugin;
-    use \Socialite\Post;
+    use \Socialite\Message;
 
     class Twitter
     {
@@ -24,7 +24,7 @@
             $this->responseType = $responseType;
         }
 
-        public function tweet (Post $post)
+        public function tweet (Message $post)
         {
             $request = $this->client->post('statuses/update.json', array(), array(
                 "status" => $post->getBody()

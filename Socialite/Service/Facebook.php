@@ -1,7 +1,7 @@
 <?php
     namespace Socialite\Service;
 
-    use Socialite\Post;
+    use Socialite\Message;
 
     /**
      * Created by PhpStorm.
@@ -19,7 +19,7 @@
             $this->facebook = $facebook;
         }
 
-        public function post (Post $post)
+        public function post (Message $post)
         {
             return $this->facebook->api('/me/feed', 'POST',
                 array(
@@ -33,4 +33,16 @@
                 'scope' => 'publish_actions'
             ));
         }
+
+        public function getLogoutUrl ()
+        {
+            return $this->facebook->getLogoutUrl();
+        }
+
+        public function getUser ()
+        {
+            return $this->facebook->getUser();
+        }
+
+
     }
