@@ -10,6 +10,7 @@
         "psr-0": { "": "Socialite/" }
     },
     "require": {
-        "guzzle/guzzle": "3.8.*@dev"
+        "guzzle/guzzle": "3.8.*@dev",
+        "facebook/php-sdk" : "*"
     }
 }

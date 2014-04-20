@@ -6,7 +6,7 @@
     use Guzzle\Plugin\Oauth\OauthPlugin;
     use \Socialite\Post;
 
-    class Twitter implements ServiceInterface
+    class Twitter
     {
         private $client;
         private $oauth;

@@ -2,8 +2,10 @@
 
     namespace Socialite\Service;
 
-    interface ServiceInterface
-{
-//            public function post (GuzzleClient $client);
+    use Socialite\Post;
 
-}
+    interface ServiceInterface
+    {
+        public function post (Post $post);
+
+    }
