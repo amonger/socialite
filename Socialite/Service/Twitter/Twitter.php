@@ -1,6 +1,6 @@
 <?php
 
-    namespace Socialite\Service;
+    namespace Socialite\Service\Twitter;
 
     use Guzzle\http\client as GuzzleClient;
     use Guzzle\Plugin\Oauth\OauthPlugin;
