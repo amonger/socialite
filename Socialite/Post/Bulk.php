@@ -24,13 +24,18 @@
         public function addPost (ServiceInterface $service)
         {
             $this->posts[] = $service;
+            return $this;
         }
 
         public function send (Message $message)
         {
             /** @var \Socialite\Service\ServiceInterface $post */
             foreach ($this->posts as $post) {
-                $post->post($message);
+                try {
+                    $post->post($message);
+                } catch (\Exception $e) {
+                    
+                }
             }
         }
 

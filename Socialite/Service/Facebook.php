@@ -44,5 +44,4 @@
             return $this->facebook->getUser();
         }
 
-
     }
