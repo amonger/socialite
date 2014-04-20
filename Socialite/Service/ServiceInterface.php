@@ -2,10 +2,10 @@
 
     namespace Socialite\Service;
 
-    use Socialite\Post;
+    use Socialite\Message;
 
     interface ServiceInterface
     {
-        public function post (Post $post);
+        public function post (Message $post);
 
     }

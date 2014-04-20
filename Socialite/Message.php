@@ -9,7 +9,7 @@
     namespace Socialite;
 
 
-    class Post
+    class Message
     {
         private $title;
         private $body;
@@ -40,20 +40,21 @@
         }
 
         /**
-         * @param mixed $date
+         * @param int $time
          */
-        public function setDate ($date)
+        public function setTime ($time)
         {
-            $this->date = $date;
+            $this->time = $time;
         }
 
         /**
-         * @return mixed
+         * @return int
          */
-        public function getDate ()
+        public function getTime ()
         {
-            return $this->date;
+            return $this->time;
         }
+
 
         /**
          * @param mixed $lat
