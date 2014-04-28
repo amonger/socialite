@@ -3,8 +3,41 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a4a05036dc870e4e43fe75fb785b97d1",
+    "hash": "342a262a22852d8e87482564eefd0e4f",
     "packages": [
+        {
+            "name": "eher/oauth",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EHER/OAuth.git",
+                "reference": "935c1f7709d1c1457de9e250d0e5f29cac06e507"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EHER/OAuth/zipball/935c1f7709d1c1457de9e250d0e5f29cac06e507",
+                "reference": "935c1f7709d1c1457de9e250d0e5f29cac06e507",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "eher/phpunit": "1.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Eher\\OAuth": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "OAuth 1 PHP Library",
+            "time": "2012-12-13 23:48:10"
+        },
         {
             "name": "facebook/php-sdk",
             "version": "v3.2.3",
@@ -57,12 +90,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle3.git",
-                "reference": "dc4a4af0ba585522863f75324bbfe2e0009f2893"
+                "reference": "e4d12d7d6acccf75a5e504114e2df9195e494108"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/dc4a4af0ba585522863f75324bbfe2e0009f2893",
-                "reference": "dc4a4af0ba585522863f75324bbfe2e0009f2893",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/e4d12d7d6acccf75a5e504114e2df9195e494108",
+                "reference": "e4d12d7d6acccf75a5e504114e2df9195e494108",
                 "shasum": ""
             },
             "require": {
@@ -141,21 +174,21 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-04-16 17:46:30"
+            "time": "2014-04-23 21:43:40"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501"
+                "reference": "e539602e5455aa086c0e81e604745af7789e4d8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/4708b8cd41984a5ba29fe7dd40716f7f761ac501",
-                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/e539602e5455aa086c0e81e604745af7789e4d8a",
+                "reference": "e539602e5455aa086c0e81e604745af7789e4d8a",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +230,56 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-11 13:52:09"
+            "time": "2014-04-16 10:34:31"
+        },
+        {
+            "name": "tumblr/tumblr",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tumblr/tumblr.php.git",
+                "reference": "73872efbd637b65366a593ae5454df0cb883f226"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tumblr/tumblr.php/zipball/73872efbd637b65366a593ae5454df0cb883f226",
+                "reference": "73872efbd637b65366a593ae5454df0cb883f226",
+                "shasum": ""
+            },
+            "require": {
+                "eher/oauth": "1.0.*",
+                "guzzle/guzzle": ">=3.1.0,<4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Tumblr\\API": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "John Crepezzi",
+                    "email": "john.crepezzi@gmail.com",
+                    "homepage": "https://github.com/seejohnrun",
+                    "role": "developer"
+                }
+            ],
+            "description": "Official Tumblr PHP Client",
+            "homepage": "https://github.com/tumblr/tumblr.php",
+            "keywords": [
+                "api",
+                "gif",
+                "sdk",
+                "tumblr"
+            ],
+            "time": "2013-07-15 15:36:55"
         }
     ],
     "packages-dev": [
