@@ -11,6 +11,7 @@
     },
     "require": {
         "guzzle/guzzle": "3.8.*@dev",
-        "facebook/php-sdk" : "*"
+        "facebook/php-sdk": "*",
+        "tumblr/tumblr": "v0.1.1"
     }
 }
