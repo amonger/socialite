@@ -8,10 +8,7 @@ in bulk.
 ###Posting to facebook
 
 ```PHP
-    $facebook = Socialite\Service\ServiceFactory::facebook(array(
-        'appId'              => 'APP_ID',
-        'secret'             => 'APP_SECRET'
-    ));
+    $facebook = Socialite\Service\ServiceFactory::facebook($appId, $appSecret);
 
     $message = new Socialite\Message();
     $message->setBody("Test Post");
@@ -21,12 +18,7 @@ in bulk.
 
 ###Posting to Twitter
 ```PHP
-    $twitter = ServiceFactory::twitter(array(
-        'consumer_key'    => "CONSUMER_KEY",
-        'consumer_secret' => "CONSUMER_SECRET",
-        'token'           => "TOKEN",
-        'token_secret'    => "TOKEN_SECRET"
-    ));
+    $twitter = ServiceFactory::twitter($consumerKey, $consumerSecret, $token, $tokenSecret);
 
     $message = new Socialite\Message();
     $message->setBody("Test Post");
@@ -37,17 +29,9 @@ in bulk.
 ## Bulk Post
 
 ```PHP
-    $twitter = ServiceFactory::twitter(array(
-        'consumer_key'    => "CONSUMER_KEY",
-        'consumer_secret' => "CONSUMER_SECRET",
-        'token'           => "TOKEN",
-        'token_secret'    => "TOKEN_SECRET"
-    ));
-    $facebook = ServiceFactory::facebook(array(
-        'appId'              => 'APP_ID',
-        'secret'             => 'APP_SECRET'
-    ));
-    $post = new \Socialite\Message();
+    $twitter    = \Socialite\Service\ServiceFactory::twitter($consumerKey, $consumerSecret, $token, $tokenSecret);
+    $facebook   = \Socialite\Service\ServiceFactory::facebook($appId, $appSecret);
+    $post       = new \Socialite\Message();
 
     $post->setBody("test");
 

@@ -1,29 +1,32 @@
 <?php
+
+namespace Socialite\Service\Tumblr;
+
+use Socialite\MessageInterface;
+use Socialite\Service\ServiceInterface;
+use Tumblr\Api\Client as TumblrClient;
+
+/**
+ * Class Tumblr
+ */
+class Tumblr implements ServiceInterface
+{
+
+    private $tumblrClient;
+
     /**
-     * Created by PhpStorm.
-     * User: alan
-     * Date: 4/28/14
-     * Time: 9:34 PM
+     * @param TumblrClient $tumblr
      */
-
-    namespace Socialite\Service\Tumblr;
-
-    use Socialite\Message;
-    use Tumblr\Api\Client as TumblrClient;
-
-    class Tumblr implements \Socialite\Service\ServiceInterface
+    public function __construct(TumblrClient $tumblr)
     {
-
-        private $tumblrClient;
-
-        public function __construct (TumblrClient $tumblr)
-        {
-            $this->tumblrClient = $tumblr;
-        }
-
-        public function post (Message $post)
-        {
-            $this->tumblrClient->createPost($post->getTitle(), array("body" => $post->getBody()));
-        }
-
+        $this->tumblrClient = $tumblr;
     }
+
+    /**
+     * @param MessageInterface $post
+     */
+    public function post(MessageInterface $post)
+    {
+        $this->tumblrClient->createPost($post->getTitle(), array("body" => $post->getBody()));
+    }
+}

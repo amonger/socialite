@@ -1,42 +1,43 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: alan
-     * Date: 4/20/14
-     * Time: 9:16 PM
-     */
 
-    namespace Socialite\Post;
+namespace Socialite\Post;
 
+use Socialite\MessageInterface;
+use Socialite\Service\ServiceInterface;
 
-    use Socialite\Message;
-    use Socialite\Service\ServiceInterface;
+/**
+ * This allows mass sending of messages which implement the ServiceInterface
+ *
+ * Class Bulk
+ */
+class Bulk
+{
+    private $posts;
 
-    class Bulk
+    public function __construct()
     {
-        private $posts;
-
-        public function __construct ()
-        {
-            $this->posts = array();
-        }
-
-        public function addPost (ServiceInterface $service)
-        {
-            $this->posts[] = $service;
-            return $this;
-        }
-
-        public function send (Message $message)
-        {
-            /** @var \Socialite\Service\ServiceInterface $post */
-            foreach ($this->posts as $post) {
-                try {
-                    $post->post($message);
-                } catch (\Exception $e) {
-
-                }
-            }
-        }
-
+        $this->posts = [];
     }
+
+    /**
+     * @param ServiceInterface $service
+     * @return $this
+     */
+    public function addPost(ServiceInterface $service)
+    {
+        $this->posts[] = $service;
+        return $this;
+    }
+
+    /**
+     * @param MessageInterface $message
+     */
+    public function send(MessageInterface $message)
+    {
+        /** @var \Socialite\Service\ServiceInterface $post */
+        foreach ($this->posts as $post) {
+            $post->post($message);
+        }
+    }
+
+}

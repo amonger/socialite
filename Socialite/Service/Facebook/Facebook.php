@@ -1,47 +1,67 @@
 <?php
-    namespace Socialite\Service\Facebook;
 
-    use Socialite\Message;
+namespace Socialite\Service\Facebook;
+
+use \Facebook;
+use Socialite\MessageInterface;
+use Socialite\Service\ServiceInterface;
+
+/**
+ * Class Facebook
+ */
+class Facebook implements ServiceInterface
+{
+
+    private $facebook;
 
     /**
-     * Created by PhpStorm.
-     * User: alan
-     * Date: 3/22/14
-     * Time: 2:02 PM
+     * @param Facebook $facebook
      */
-    class Facebook implements \Socialite\Service\ServiceInterface
+    public function __construct(Facebook $facebook)
     {
-
-        private $facebook;
-
-        public function __construct (\Facebook $facebook)
-        {
-            $this->facebook = $facebook;
-        }
-
-        public function post (Message $post)
-        {
-            return $this->facebook->api('/me/feed', 'POST',
-                array(
-                    'message' => $post->getBody()
-                ));
-        }
-
-        public function getLoginUrl ()
-        {
-            return $this->facebook->getLoginUrl(array(
-                'scope' => 'publish_actions'
-            ));
-        }
-
-        public function getLogoutUrl ()
-        {
-            return $this->facebook->getLogoutUrl();
-        }
-
-        public function getUser ()
-        {
-            return $this->facebook->getUser();
-        }
-
+        $this->facebook = $facebook;
     }
+
+    /**
+     * @param MessageInterface $post
+     * @return mixed
+     */
+    public function post(MessageInterface $post)
+    {
+        return $this->facebook->api(
+            '/me/feed',
+            'POST',
+            [
+                'message' => $post->getBody()
+            ]
+        );
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLoginUrl()
+    {
+        return $this->facebook->getLoginUrl(
+            [
+                'scope' => 'publish_actions'
+            ]
+        );
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLogoutUrl()
+    {
+        return $this->facebook->getLogoutUrl();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->facebook->getUser();
+    }
+}

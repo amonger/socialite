@@ -1,11 +1,14 @@
 <?php
 
-    namespace Socialite\Service;
+namespace Socialite\Service;
 
-    use Socialite\Message;
+use Socialite\MessageInterface;
 
-    interface ServiceInterface
-    {
-        public function post (Message $post);
-
-    }
+interface ServiceInterface
+{
+    /**
+     * @param MessageInterface $post
+     * @return mixed
+     */
+    public function post(MessageInterface $post);
+}
