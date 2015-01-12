@@ -39,5 +39,4 @@ class Bulk
             $post->post($message);
         }
     }
-
 }

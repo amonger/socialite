@@ -14,7 +14,6 @@ use Socialite\MessageInterface;
 class Twitter
 {
     private $client;
-    private $oauth;
     private $responseType;
 
     /**
@@ -24,7 +23,6 @@ class Twitter
      */
     public function __construct(GuzzleClient $client, OauthPlugin $oauth, $responseType = "json")
     {
-        $this->oauth = $oauth;
         $this->client = $client
             ->setBaseUrl('https://api.twitter.com/{version}')
             ->addSubscriber($oauth)

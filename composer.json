@@ -1,5 +1,6 @@
 {
     "name": "alanmonger/socialite",
+    "license": "MIT",
     "description": "Simple social media wrapper",
     "authors": [
         {
