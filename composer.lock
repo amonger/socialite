@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "313060dfb6c7e44f3e24aae662032e44",
+    "hash": "1f6adc50203dd3c494c22817ce5f4761",
     "packages": [
         {
             "name": "eher/oauth",
