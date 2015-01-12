@@ -1,3 +1,4 @@
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/1bcf73fc-369b-4cfc-9f6a-635a471a2dce/mini.png)](https://insight.sensiolabs.com/projects/1bcf73fc-369b-4cfc-9f6a-635a471a2dce)
 #Socialite
 
 Socialite is a social media component which allows posting to popular social media platforms either independently or
