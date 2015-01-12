@@ -1,5 +1,6 @@
 {
-    "name": "root/public_html",
+    "name": "alanmonger/socialite",
+    "description": "Simple social media wrapper",
     "authors": [
         {
             "name": "Alan Monger",
@@ -10,8 +11,8 @@
         "psr-0": { "": "Socialite/" }
     },
     "require": {
-        "guzzle/guzzle": "3.8.*@dev",
-        "facebook/php-sdk": "*",
-        "tumblr/tumblr": "v0.1.1"
+        "guzzle/guzzle": "3.9.*",
+        "facebook/php-sdk-v4": "4.0.*",
+        "tumblr/tumblr": "0.1.*"
     }
 }
